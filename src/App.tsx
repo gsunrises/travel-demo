@@ -6,8 +6,8 @@ import { GlobalOutlined } from '@ant-design/icons'
 function App() {
     return (
         <div className={styles.App}>
-            <div>
-                <Typography.Text>
+            <div className={styles["top-header"]}>
+                <Typography.Text style={{ marginLeft: 30, marginRight: 20 }}>
                     让旅游更幸福
                 </Typography.Text>
                 <Dropdown.Button
@@ -20,10 +20,14 @@ function App() {
                             }
                         />
                     }
-                    icon={<GlobalOutlined/>}
+                    icon={<GlobalOutlined />}
                 >
                     语言
                 </Dropdown.Button>
+                <Button.Group className={styles["button-group"]}>
+                    <Button>注册</Button>
+                    <Button>登录</Button>
+                </Button.Group>
             </div>
             <div className={styles["App-header"]}>
                 <Layout.Header className={styles["main-header"]}>
@@ -36,7 +40,30 @@ function App() {
                         className={styles["search-input"]}
                     ></Input.Search>
                 </Layout.Header>
+
+                <Menu mode={"horizontal"}
+                    className={styles["main-menu"]}
+                    items={[
+                        { key: 1, label: '旅游首页' },
+                        { key: 2, label: '酒店' },
+                        { key: 3, label: '机票' },
+                        { key: 4, label: '火车票' },
+                        { key: 5, label: '旅游' },
+                        { key: 6, label: '攻略·景点' },
+                        { key: 7, label: '汽车·船票' },
+                        { key: 8, label: '门票·活动' },
+                        { key: 9, label: '用车' },
+                        { key: 10, label: '全球购' },
+                        { key: 11, label: '礼品卡' },
+                        { key: 12, label: '企业商旅' },
+                        { key: 13, label: '旅游金融' },
+                    ]}
+                >
+                </Menu>
             </div>
+            <Layout.Footer className={styles.footer}>
+                @CopyRight by 旅游网
+            </Layout.Footer>
         </div>
     );
 }
